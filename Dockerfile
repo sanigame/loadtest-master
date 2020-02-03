@@ -1,4 +1,4 @@
-FROM thothbot/alpine-jre8
+FROM alpine:3.10
 MAINTAINER Supasan Suklim <supasan.game@gmail.com>
 
 ENV JMETER_VERSION=5.1.1 \
@@ -9,6 +9,9 @@ ENV JMETER_VERSION=5.1.1 \
 RUN set -ex && \
      apk upgrade --update && \
      apk add --update libstdc++ curl ca-certificates unzip bash && \
+     apk add --update openjdk8-jre tzdata curl unzip bash && \
+     apk add --no-cache nss && \
+     rm -rf /var/cache/apk/* && \
 
      curl -jksSLH "Cookie: oraclelicense=accept-securebackup-cookie" -o /tmp/jm.tar.gz \
         https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-${JMETER_VERSION}.tgz && \
