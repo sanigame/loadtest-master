@@ -24,7 +24,7 @@ sudo docker run -dit --name slave03 sanigame/loadtest-slave /bin/bash
 
 #### Launch master
 ```bash
-sudo docker run -dit --name master thothbot/jmeter-master /bin/bash
+sudo docker run -dit --name master sanigame/loadtest-master /bin/bash
 ```
 
 #### See all the running containers and ports opened
@@ -69,7 +69,7 @@ sudo docker run -dit -e LOCALIP='52.10.0.4' -p 1099:1099 -p 50000:50000 sanigame
 
 #### Launch master
 ```bash
-sudo docker run -dit --name master -p 60000:60000 sanigame/loadtest-slave /bin/bash
+sudo docker run -dit --name master -p 60000:60000 sanigame/loadtest-master /bin/bash
 ```
 
 #### Run tests
