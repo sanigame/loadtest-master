@@ -1,4 +1,4 @@
-FROM alpine:3.10
+FROM thothbot/alpine-jre8
 MAINTAINER Supasan Suklim <supasan.game@gmail.com>
 
 ENV JMETER_VERSION=5.1.1 \
